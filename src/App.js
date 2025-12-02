@@ -21,13 +21,7 @@ export default function App(props) {
     const [PlatformURL, setPlatformURL] = useState(localStorage.getItem("PlatformURL")!==null?localStorage.getItem("PlatformURL"):"");
     var config = require("./config.json");
     console.log(config)
-    // console.log(uuid("test"+Date.now().toString()));
-    // if (!(Object.keys(config).includes("ID_PLATFORM"))){
-        // const uuid = require("uuid-by-string");
 
-        // config["ID_PLATFORM"] =   uuid(Date.now().toString());
-
-    // }
 
     useEffect(() => {
         //

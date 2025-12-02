@@ -253,7 +253,7 @@ def from_keyset_to_csv(key_set, separator="."):
     return (["key","mother_key", "level","color"],set(csv_list))
 
 # Run BEFORE usage of network
-registry = json.loads(open("registry.json","r").read())
+registry = json.loads(open("registry.json","r", encoding="utf8").read())
 
 with open("registry_ODATIS.dict", "wb") as fp:
     pickle.dump(registry,fp)
@@ -323,7 +323,7 @@ for model_name in model_examples_folder:
             if j.endswith(".xml"):
                 try:
                     file_list.append((os.path.join(i[0], j), model_name, "xml"))
-                    file = etree.parse(open(os.path.join(i[0], j)),
+                    file = etree.parse(open(os.path.join(i[0], j),encoding="utf8"),
                                        parser=etree.XMLParser(ns_clean=True, remove_comments=True,
                                                               recover=True)).getroot()
                     res = XML_to_dict(file)
@@ -334,7 +334,7 @@ for model_name in model_examples_folder:
             if j.endswith(".csv"):
                 print((os.path.join(i[0], j)))
                 if os.path.join(i[0], j) == "../demonstration_files/raw_data/opendatasoft/datasets.csv":
-                    csv_data = pd.read_csv(os.path.join(i[0], j), sep=";")
+                    csv_data = pd.read_csv(os.path.join(i[0], j), sep=";", on_bad_lines='skip')
                     csv_data.columns = csv_data.columns.map(lambda x: x.replace(".", "#"))
                     # print(get_delimiter("../raw_data/opendatasoft/datasets.csv"))
                     json_data = csv_data.to_json(orient='records')
@@ -342,7 +342,7 @@ for model_name in model_examples_folder:
                     for document in json.loads(json_data):
                         read_preprocess_insert_in_mongodb_json(document, mongodb_coll=mongodb_coll_var, fp_is_dict=True)
                 else:
-                    csv_data = pd.read_csv(os.path.join(i[0], j), sep=",")
+                    csv_data = pd.read_csv(os.path.join(i[0], j), sep=",", on_bad_lines='skip')
                     # print(get_delimiter("../raw_data/opendatasoft/datasets.csv"))
                     json_data = csv_data.to_json(orient='records')
                     # print(type(json.loads(json_data)))

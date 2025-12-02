@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file:////wsl.localhost/Ubuntu-22.04/home/vincentnam/code/docker_datalake/.idea/docker_datalake.iml" filepath="//wsl.localhost/Ubuntu-22.04/home/vincentnam/code/docker_datalake/.idea/docker_datalake.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/edbt_demo_2024.iml" filepath="$PROJECT_DIR$/.idea/edbt_demo_2024.iml" />
-      <module fileurl="file://$USER_HOME$/PycharmProjects/metadata_mining/.idea/metadata_mining.iml" filepath="$USER_HOME$/PycharmProjects/metadata_mining/.idea/metadata_mining.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../metadata_mining/.idea/metadata_mining.iml" filepath="$PROJECT_DIR$/../metadata_mining/.idea/metadata_mining.iml" />
     </modules>
   </component>
 </project>

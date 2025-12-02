@@ -295,26 +295,20 @@ services:
     links:
       - "database_sql"
 
+  nginx-proxy:
+    build:
+      context: ./nginx/
+      dockerfile: Dockerfile
+    container_name: nginx_proxy
+    restart: unless-stopped
 
+    ports:
+      - "7000:80"
 
+    networks:
+      frontend_demo:
+        ipv4_address: 193.168.1.200
 
-#
-#  aeris2:
-#    build:
-#      context: .
-#      dockerfile: ./Dockerfile
-#    #    ports:
-#    #      - "5000:5000"
-#
-#    networks:
-#      frontend_demo:
-#        ipv4_address: 193.168.1.13
-#    environment:
-#      - PLATFORM-ID=4
-#    volumes:
-#      - ./:/code
-#    links:
-#      - "database_json"
 
 
 

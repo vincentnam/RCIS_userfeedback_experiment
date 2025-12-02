@@ -7,8 +7,9 @@
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.8 (venv)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.9 (PythonProject1)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="metadata_mining" />
+    <orderEntry type="module" module-name="docker_datalake" />
   </component>
 </module>
