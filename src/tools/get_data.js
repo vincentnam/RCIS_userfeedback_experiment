@@ -1,5 +1,6 @@
 export default async function get_data(url, initiator, model, key, operator, value, query ){
-
+        console.log(url)
+    console.log("getdata")
     const url_to_name={
         "http://193.168.1.10:5000": "odatis",
         "http://193.168.1.11:5000": "aeris",
@@ -16,6 +17,7 @@ export default async function get_data(url, initiator, model, key, operator, val
         "http://193.168.1.23:5000": "engmeta",
         "http://193.168.1.30:5000": "harvard-dataverse"
     }
+        console.log(url_to_name[url])
     console.log("http://localhost:7000/"+url_to_name[url]+"/request")
 
 

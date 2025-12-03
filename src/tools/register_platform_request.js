@@ -1,6 +1,8 @@
 
 export default async function register_platform(url, headers, data){
-        const url_to_name={
+    console.log(url)
+    console.log("register_platform")
+    const url_to_name={
         "http://193.168.1.10:5000": "odatis",
         "http://193.168.1.11:5000": "aeris",
         "http://193.168.1.12:5000": "fhir",
@@ -16,6 +18,7 @@ export default async function register_platform(url, headers, data){
         "http://193.168.1.23:5000": "engmeta",
         "http://193.168.1.30:5000": "harvard-dataverse"
     }
+    console.log(url_to_name[url])
     const request = new Request("http://localhost:7000/"+url_to_name[url]+"/registry", {
         method: "POST",
         headers:headers,

@@ -692,6 +692,8 @@ def request_metadata():
                 ret = {**ret, **json.loads(rep.text)}
             except Exception as e:
                 print(e, file=sys.stderr)
+
+    print(ret,file=sys.stderr)
     print(len(ret),file=sys.stderr)
     return ret
 

@@ -1,5 +1,8 @@
 export default async function get_mandatory_platform_to_connect_to(url){
-        const url_to_name={
+    console.log(url)
+    console.log("getmandat")
+
+    const url_to_name={
         "http://193.168.1.10:5000": "odatis",
         "http://193.168.1.11:5000": "aeris",
         "http://193.168.1.12:5000": "fhir",
@@ -15,7 +18,7 @@ export default async function get_mandatory_platform_to_connect_to(url){
         "http://193.168.1.23:5000": "engmeta",
         "http://193.168.1.30:5000": "harvard-dataverse"
     }
-
+    console.log(url_to_name[url])
     const request = new Request("http://localhost:7000/"+url_to_name[url]+"/inscription", {
         method: "GET",
         headers: {
@@ -25,6 +28,8 @@ export default async function get_mandatory_platform_to_connect_to(url){
     return fetch(request)
         .then(response => {
             console.log(response)
+                console.log(url)
+    console.log("getmandat")
             return response.json()
         })
         .then(data => {
