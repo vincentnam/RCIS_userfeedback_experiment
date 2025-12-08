@@ -1,0 +1,7 @@
+concept,type
+titre,str
+description,str
+lien,URL
+nbpersonnes,int
+access,str
+duree,str
